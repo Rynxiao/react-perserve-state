@@ -4,7 +4,9 @@ module.exports = {
     devtool: '#eval-source-map',
     entry : {
         app : [
-            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+            // 'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr&timeout=20000',
+            'webpack-hot-middleware/client?http://localhost:8080/',
+            'webpack/hot/dev-server',
             './src/app.js'
         ]
     },

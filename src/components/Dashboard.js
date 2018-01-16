@@ -1,31 +1,58 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
+import React, { Component } from 'react';
+import { NavBar, List } from 'antd-mobile';
+const Item = List.Item;
+const Brief = Item.Brief;
 
 class Dashboard extends Component {
-  render() {
-    const { courses } = this.props
-
-    return (
-      <div>
-        <h2>Super Scalable Apps</h2>
-        <p>
-          Open the network tab as you navigate. Notice that only the amount of
-          your app that is required is actually downloaded as you navigate
-          around. Even the route configuration objects are loaded on the fly.
-          This way, a new route added deep in your app will not affect the
-          initial bundle of your application.
-        </p>
-        <h2>Courses</h2>{' '}
-        <ul>
-          {courses.map(course => (
-            <li key={course.id}>
-              <Link to={`/course/${course.id}`}>{course.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <NavBar mode="dark">图书列表</NavBar>
+                <List className="my-list">
+                    <Item
+                        extra="10:30"
+                        arrow="horizontal"
+                        align="middle"
+                        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+                        multipleLine
+                        onClick={() => {}}>
+                        Title
+                        <Brief>subtitle</Brief>
+                    </Item>
+                    <Item
+                        extra="10:30"
+                        arrow="horizontal"
+                        align="top"
+                        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+                        multipleLine
+                        onClick={() => {}}>
+                        Title
+                        <Brief>subtitle</Brief>
+                    </Item>
+                    <Item
+                        extra="10:30"
+                        arrow="horizontal"
+                        align="top"
+                        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+                        multipleLine
+                        onClick={() => {}}>
+                        Title
+                        <Brief>subtitle</Brief>
+                    </Item>
+                    <Item
+                        extra="10:30"
+                        arrow="horizontal"
+                        align="top"
+                        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+                        multipleLine
+                        onClick={() => {}}>
+                        Title
+                        <Brief>subtitle</Brief>
+                    </Item>
+                </List>
+            </div>
+        )
+    }
 }
 
 export default Dashboard

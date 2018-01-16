@@ -1,19 +1,23 @@
-/*globals COURSES:true */
-import React, { Component } from 'react'
-import Dashboard from './Dashboard'
-import GlobalNav from './GlobalNav'
+import React, { Component } from 'react';
+import Dashboard from './Dashboard';
+
+const styles = {
+    app: {
+        width: '100%',
+        height: '100%'
+    }
+};
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <GlobalNav />
-        <div style={{ padding: 20 }}>
-          {this.props.children || <Dashboard courses={COURSES} />}
-        </div>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div style={ styles.app }>
+                <div>
+                    { this.props.children || <Dashboard /> }
+                </div>
+            </div>
+        )
+    }
 }
 
-module.exports = App
+module.exports = App;
