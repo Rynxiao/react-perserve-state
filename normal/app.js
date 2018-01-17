@@ -1,10 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import Books from './routes/Books';
-import configureStore from './redux/stores';
-const store = configureStore({});
 
 const rootRoute = {
     childRoutes: [{
@@ -12,6 +9,7 @@ const rootRoute = {
         component: require('./components/App'),
         childRoutes: [
             ...Books,
+            // require('./routes/Books/books'),
             require('./routes/Calendar'),
             require('./routes/Course'),
             require('./routes/Grades')
@@ -20,9 +18,7 @@ const rootRoute = {
 };
 
 render((
-    <Provider store={ store }>
-        <Router history={ browserHistory } routes={ rootRoute } />
-    </Provider>
+    <Router history={ browserHistory } routes={ rootRoute } />
 ), document.getElementById('container'));
 
 if (module.hot) {
